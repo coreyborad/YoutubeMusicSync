@@ -1,0 +1,15 @@
+version: '3'
+services:
+  musicsync-python:
+    container_name: musicsync-python
+    build: .
+    image: musicsync-python:v1
+    restart: always
+    volumes:
+      - ./src:/usr/src/app
+      - music:/usr/src/music
+      - ./crontab:/var/spool/cron/crontabs/root
+      # - ./archive.txt:/usr/src/app/archive.txt
+    command: ["tail", "-f", "/dev/null"]
+volumes:
+  music: {}
