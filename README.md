@@ -9,27 +9,31 @@ Automatic sync Youtube's playlist mp3 file to Linux, also made on GoogleDrive. F
 
 ## 安裝需求
 
-* Docker - Need install on host [Github連結](https://github.com/docker/docker-ce)
-* Docker-compose - Need install on host [Github連結](https://github.com/docker/compose)
-* Rclone - Need install on host [Github連結](https://github.com/ncw/rclone)
-* Youtube-dl - Already in Docker [Github連結](https://github.com/ytdl-org/youtube-dl)
+* Docker - Need install on host - [Github連結](https://github.com/docker/docker-ce)
+* Docker-compose - Need install on host - [Github連結](https://github.com/docker/compose)
+* Rclone - Need install on host - [Github連結](https://github.com/ncw/rclone)
+* Youtube-dl - Already in Docker - [Github連結](https://github.com/ytdl-org/youtube-dl)
 
-## 安裝環境 - 以 Ubuntu 16.04 為例子
+## 安裝環境 - 以 `Ubuntu 16.04` 為例子
 
-### 1. 安裝 Docker
-#### [參考網址](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)
+### 1. 安裝 `Docker` - [安裝參考網址](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)
 
-* 增加GPGKey
-``` curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - ```
+增加 GPGKey
 
-* 增加Docker repository
-``` sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" ```
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-* 更新Package
-``` sudo apt-get update ```
+增加 Docker repository
 
-* 安裝Docker
-``` sudo apt-get install -y docker-ce ```
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
-* 將當前User加入 docker group
-``` sudo usermod -aG docker $(whoami) ```
+更新 Package
+
+    sudo apt-get update
+
+安裝 Docker
+
+    sudo apt-get install -y docker-ce
+
+將當前 User 加入 Docker group
+
+    sudo usermod -aG docker $(whoami)
