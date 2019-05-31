@@ -37,3 +37,26 @@ Automatic sync Youtube's playlist mp3 file to Linux, also made on GoogleDrive. F
 將當前 User 加入 Docker group
 
     sudo usermod -aG docker $(whoami)
+
+### 2. 安裝 `Docker-compose` - [安裝參考網址](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)
+
+下載 Docker-compose，並移動到 bash 目錄使得docker-compose可以直接變成指令操作
+
+    sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+
+變更docker-compose的權限，使其可被執行
+
+    sudo chmod +x /usr/local/bin/docker-compose
+
+### 3. 安裝 `Rclone`
+
+這邊可以參考官方提供的安裝方式
+
+    https://rclone.org/install/
+
+或者，可以直接執行官方提供的安裝Scripts
+
+    curl https://rclone.org/install.sh | sudo bash
+
+### 4. 使用 `Rclone` 設定要與 `GoogleDrive` 同步的資料夾
+
