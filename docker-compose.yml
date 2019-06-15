@@ -5,8 +5,12 @@ services:
     build: .
     image: musicsync-python:v1
     restart: always
+    environment:
+      TZ: "Asia/Taipei"
     volumes:
       - ./src:/usr/src/app
       - music:/usr/src/music
+      #- /etc/localtime:/etc/localtime:ro
+      #- /etc/timezone:/etc/timezone:ro
 volumes:
   music: {}

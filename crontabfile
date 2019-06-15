@@ -1,8 +1,7 @@
+#!/bin/bash
 # /etc/crontab: system-wide crontab
 # Unlike any other crontab you don't have to run the `crontab'
 # command to install the new version when you edit this file
 # and files in /etc/cron.d. These files also have username fields,
 # that none of the other crontabs do.
-
-30 1 * * * root youtube-dl --ignore-errors --extract-audio --audio-format mp3 -o "/usr/src/music/%(title)s.mp3" --download-archive "/usr/src/app/archive_0.txt" "https://www.youtube.com/playlist?list=[LISTID]"
-30 2 * * * root youtube-dl --ignore-errors --extract-audio --audio-format mp3 -o "/usr/src/music/%(title)s.mp3" --download-archive "/usr/src/app/archive_1.txt" "https://www.youtube.com/playlist?list=[LISTID]"
+0 1 * * python /usr/src/app/sync_music.py
