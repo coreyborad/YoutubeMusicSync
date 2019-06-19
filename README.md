@@ -60,3 +60,8 @@ Automatic sync Youtube's playlist mp3 file to Linux, also made on GoogleDrive. F
 
 ### 4. 使用 `Rclone` 設定要與 `GoogleDrive` 同步的資料夾
 
+..待補圖
+
+### 5. 開啟 `Container`
+
+..待補圖
