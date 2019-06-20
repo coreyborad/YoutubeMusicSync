@@ -254,7 +254,7 @@ RootID就相當於Google Drive的資料夾ID，請記住你想要Sync的資料�
 
 尋找方法如下圖
 
-![image](https://github.com/coreyborad/YoutubeMusicSync/blob/master/images/Readme_2.png)
+..待補圖
 
 ### 6. 啟動專案
 
