@@ -248,6 +248,36 @@ Automatic sync Youtube's playlist mp3 file to Linux, also made on GoogleDrive. F
     q) Quit config
     e/n/d/r/c/s/q> q
 
-### 5. 開啟 `Container`
+### 5. 找到 `Google Drive` 的 `Root ID`
+
+RootID就相當於Google Drive的資料夾ID，請記住你想要Sync的資料夾ID
+
+尋找方法如下圖
 
 ..待補圖
+
+### 6. 啟動專案
+
+至專案目錄下，啟動container
+
+    docker-compose up -d
+
+Mount google drive，請輸入自己的 `RootID`
+
+    screen -d -m -S rcmount rclone mount --drive-root-folder-id [RootID] google:/Music /var/lib/docker/volumes/musicsync_music/_data --allow-other --allow-non-empty --vfs-cache-mode writes
+    
+重啟 `Container`，使 `mount資料夾` 重新被載入
+
+    docker restart musicsync-python
+    
+## 常見疑問
+
+### 1. 如果要取消 `Mount` ，請輸入以下指令
+
+    fusermount -qzu /var/lib/docker/volumes/musicsync_music/_data
+    
+### 2. 我想要更改每天 `Sync` 的時間
+
+請修改crontabfile，參考crontab時間格式
+
+    https://github.com/coreyborad/YoutubeMusicSync/blob/master/crontabfile
